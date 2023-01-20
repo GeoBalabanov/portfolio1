@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../untitled folder/css/professional.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Portfolio 2022</title>
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header id="parallax_main" class="collapsing-parallax">
+       <div id="nav-button" class="menu-trigger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+     </div>
+   <div id="toolbar_main" class="toolbar-collapsing-parallax">
+     <section id="title_main" class="title-collapsing-parallax">
+      <div class="avatar"></div>
+        <div class="title-container">
+      <title class="main">Georgi Balabanov</title>
+      <title class="secondary">@georgibalabanov1_</title>
+         </div>
+     </section>
+     <div class="fab">
+      <!-- Main Button -->
+      <div id="main-fab" color="#" class="fab-button xLarge">
+       <i class="fa fa-plus"></i>
+      </div>
+     </div>
+    </header>
+    <main id="#content" class="site-main" role="main">
+        <section class="inner">
+   <div class="row">
+   <div class="cardview">
+       <img style="background-image:url(https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=9f23ab4452326630cf9e4c878b929770)"/>
+       <section class="content">
+        <h1>Trends & Developments</h1>
+        <p></p>
+       <a href="professional1tech.html">READ MORE</a>
+           </section>
+        </div>
+       <div class="cardview">
+       <img style="background-image:url(https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=9f23ab4452326630cf9e4c878b929770)"/>
+       <section class="content">
+        <h1>Iterative Process</h1>
+        <p></p>
+       <a href="professional2tech.html">READ MORE</a>
+           </section>
+        </div>
+       <div class="cardview">
+       <img style="background-image:url(https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=9f23ab4452326630cf9e4c878b929770)"/>
+       <section class="content">
+        <h1>Interactive Prototypes</h1>
+        <p></p>
+       <a href="professional3tech.html">READ MORE</a>
+           </section>
+             </div>
+             <div class="cardview">
+                <img style="background-image:url(https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=9f23ab4452326630cf9e4c878b929770)"/>
+                <section class="content">
+                 <h1>Target Group</h1>
+                 <p></p>
+                <a href="professional4tech.html">READ MORE</a>
+                    </section>
+                      </div>
+                    </section>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright &copy 2022 by <a href="https://www.instagram.com/georgibalabanov1_/" target="_blank">@georgibalabanov1_</a></p>
+    </footer>
+    
+   </body>
+   <script>
+    (function ($) {
+        var $pMain = $("#parallax_main"),
+            $pToolbar = $pMain.find("#toolbar_main"),
+            $pTitle = $pToolbar.find("#title_main"),
+            $pNavTrigger = $pMain.find("#nav-button"),
+            alpha = 0,
+            scale = 1;
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st <= 0) {
+                maxHeight = 350;
+            } else if (st > 350) {
+                alpha = 1;
+                maxHeight = 70;
+            } else {
+                alpha = 0.0 + (1.2 * st) / 350;
+                scale = 1 - (0.2 * st) / 350;
+                maxHeight = 350 - (280 * (st - 0)) / 350;
+                console.log(maxHeight);
+            }
+            $pToolbar.css("background", "rgba(33,14,61," + alpha + ")");
+            $pMain.css({
+                "max-height": maxHeight + "px"
+            });
+            $pTitle.css("transform", "scale(" + scale + ")");
+        });
+        $pNavTrigger.click(function () {
+            $(this).toggleClass("active");
+        });
+    })(jQuery);
+</script>
